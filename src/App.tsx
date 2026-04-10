@@ -328,18 +328,21 @@ const RegistrationForm = () => {
 const handleFinalCTA = () => {
   if (!isStep2Valid) return;
 
+  // Meta Lead tracking
   window.trackCTA?.("final_complete_registration");
 
+  // Optional custom event
   window.trackCustomEvent?.("Final_CTA_Click", {
     button_name: "Complete Registration",
     step: 2,
+    username: formData.name,
   });
 
+  // Show success page
   setIsSuccess(true);
   setCountdown(8);
   setProgress(0);
 };
-
   useEffect(() => {
     if (!isSuccess) return;
 
@@ -467,19 +470,19 @@ const handleFinalCTA = () => {
                   </div>
 
                   <h2 className="text-3xl font-bold text-white sm:text-4xl">
-                    Welcome to the Family
+                    欢迎加入大家庭
                   </h2>
 
                   <p className="mt-4 text-base leading-relaxed text-blue-100/85 sm:text-lg">
-                    You have successfully joined our family,
-                    <span className="font-bold text-white"> iClub88</span>, known as
+                    恭喜！您已成功加入我们的大家庭
+                    <span className="font-bold text-white"> iClub88</span>,简称
                     <span className="font-bold text-cyan-200"> i88</span>.
                   </p>
 
                   <p className="mt-4 text-sm leading-relaxed text-blue-100/75 sm:text-base">
-                    We will redirect you to our official home page in{" "}
+                    系统将自动跳转至官方主页在{" "}
                     <span className="font-bold text-white">{countdown}</span>{" "}
-                    seconds.
+                    秒后
                   </p>
 
                   <div className="mt-8">
@@ -704,19 +707,20 @@ const handleFinalCTA = () => {
                   </div>
 
                   <motion.button
-                    whileHover={isStep2Valid ? { scale: 1.02 } : {}}
-                    whileTap={isStep2Valid ? { scale: 0.98 } : {}}
-                    onClick={handleFinalCTA}
-                    disabled={!isStep2Valid}
-                    className={`flex w-full items-center justify-center gap-2 rounded-2xl bg-[linear-gradient(90deg,#1D4ED8_0%,#2563EB_42%,#22D3EE_100%)] py-4 font-bold text-white shadow-[0_18px_40px_rgba(37,99,235,0.38)] transition-all ${
-                      !isStep2Valid
-                        ? "cursor-not-allowed opacity-40 grayscale-[0.5]"
-                        : "hover:brightness-110 hover:shadow-[0_20px_50px_rgba(34,211,238,0.28)]"
-                    }`}
-                  >
-                    完成注册
-                    <CheckCircle2 className="h-5 w-5" />
-                  </motion.button>
+  type="button"
+  whileHover={isStep2Valid ? { scale: 1.02 } : {}}
+  whileTap={isStep2Valid ? { scale: 0.98 } : {}}
+  onClick={handleFinalCTA}
+  disabled={!isStep2Valid}
+  className={`flex w-full items-center justify-center gap-2 rounded-2xl bg-[linear-gradient(90deg,#1D4ED8_0%,#2563EB_42%,#22D3EE_100%)] py-4 font-bold text-white shadow-[0_18px_40px_rgba(37,99,235,0.38)] transition-all ${
+    !isStep2Valid
+      ? "cursor-not-allowed opacity-40 grayscale-[0.5]"
+      : "hover:brightness-110 hover:shadow-[0_20px_50px_rgba(34,211,238,0.28)]"
+  }`}
+>
+  完成注册
+  <CheckCircle2 className="h-5 w-5" />
+</motion.button>
 
                   <motion.button
   type="button"
