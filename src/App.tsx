@@ -331,7 +331,7 @@ const RegistrationForm = () => {
     (window as any).trackCTA?.("final_complete_registration");
 
     (window as any).trackCustomEvent?.("Final_CTA_Click", {
-      button_name: "Complete Registration",
+      button_name: "完成注册",
       step: 2,
       username: formData.name,
     });
@@ -509,16 +509,16 @@ const RegistrationForm = () => {
                 >
                   <div className="mb-8 text-center">
                     <h2 className="mb-2 text-3xl font-bold text-white sm:text-4xl">
-                      Create Your Account
+                      创建账号
                     </h2>
                     <p className="text-blue-100/75">
-                      Join the elite circle of high-rollers
+                     加入精英大户行列
                     </p>
                   </div>
 
                   <div className="space-y-2">
                     <label className="ml-1 text-sm font-medium text-white/92">
-                      Username
+                      用户名
                     </label>
                     <div className="relative">
                       <User className="pointer-events-none absolute left-4 top-1/2 z-10 h-5 w-5 -translate-y-1/2 text-white" />
@@ -536,7 +536,7 @@ const RegistrationForm = () => {
 
                   <div className="space-y-2">
                     <label className="ml-1 text-sm font-medium text-white/92">
-                      Password
+                      密码
                     </label>
                     <div className="relative">
                       <Lock className="pointer-events-none absolute left-4 top-1/2 z-10 h-5 w-5 -translate-y-1/2 text-white" />
@@ -556,12 +556,12 @@ const RegistrationForm = () => {
                     </div>
                     {formData.password.length === 0 && (
                       <p className="ml-1 mt-1 text-xs text-blue-200/70">
-                        Must be 6+ characters and include a number
+                        须包含 6 个以上字符及数字
                       </p>
                     )}
                     {formData.password && !passwordRegex.test(formData.password) && (
                       <p className="ml-1 mt-1 text-xs text-red-400">
-                        Password must be at least 6 characters and contain a number
+                        密码须包含至少 6 个字符及数字
                       </p>
                     )}
                   </div>
@@ -579,7 +579,7 @@ const RegistrationForm = () => {
   }`}
   style={{ pointerEvents: "auto" }}
 >
-  <span className="pointer-events-none">Join Now</span>
+  <span className="pointer-events-none">立即加入</span>
   <ChevronRight className="h-5 w-5 pointer-events-none transition-transform duration-300 group-hover:translate-x-1" />
 </motion.button>
                 </motion.div>
@@ -594,29 +594,29 @@ const RegistrationForm = () => {
                 >
                   <div className="mb-8 text-center">
                     <h2 className="mb-2 text-3xl font-bold text-white sm:text-4xl">
-                      Create Your Account
+                      创建您的账号
                     </h2>
                     <p className="text-blue-100/75">
-                      Join the elite circle of high-rollers
+                      加入精英大户行列
                     </p>
 
                     {formData.name && (
                       <p className="mt-3 text-sm font-medium text-cyan-100/90">
-                        Hi <span className="font-bold text-white">{formData.name}</span>,
-                        please fill in the form to start your journey
+                        您好, <span className="font-bold text-white">{formData.name}</span>,
+                        请填写表格并领取您的FS
                       </p>
                     )}
                   </div>
 
                   <div className="space-y-2">
                     <label className="ml-1 text-sm font-medium text-white/92">
-                      Full Name
+                      姓名
                     </label>
                     <div className="relative">
                       <UserPlus className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white" />
                       <input
                         type="text"
-                        placeholder="John Doe"
+                        placeholder="刘德华"
                         className="w-full rounded-2xl border border-white/18 bg-[linear-gradient(180deg,rgba(233,233,242,0.26),rgba(233,233,242,0.18))] py-4 pl-12 pr-4 text-sm leading-none text-white placeholder:text-white/55 shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_8px_20px_rgba(0,0,0,0.12)] backdrop-blur-md transition-all focus:outline-none focus:ring-2 focus:ring-white/18"
                         value={formData.fullName}
                         onChange={(e) =>
@@ -631,15 +631,14 @@ const RegistrationForm = () => {
                     >
                       <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
                       <p className="text-[11px] italic leading-relaxed text-blue-100/72">
-                        Reminder: Name must match your bank account name for faster
-                        withdrawal processing.
+                        提示：姓名必须与银行账号姓名一致，以确保提款快速到账
                       </p>
                     </motion.div>
                   </div>
 
                   <div className="space-y-2">
                     <label className="ml-1 text-sm font-medium text-white/92">
-                      Email Address
+                      电子邮箱
                     </label>
                     <div className="relative">
                       <Mail className="pointer-events-none absolute left-4 top-1/2 z-10 h-5 w-5 -translate-y-1/2 text-white" />
@@ -659,14 +658,14 @@ const RegistrationForm = () => {
                     </div>
                     {formData.email && !emailRegex.test(formData.email) && (
                       <p className="ml-1 mt-1 text-xs text-red-400">
-                        Please enter a valid email address
+                        请输入有效的邮箱
                       </p>
                     )}
                   </div>
 
                   <div className="space-y-2">
                     <label className="ml-1 text-sm font-medium text-white/92">
-                      Phone Number
+                     电话号码
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white" />
@@ -701,10 +700,7 @@ const RegistrationForm = () => {
                       htmlFor="terms"
                       className="cursor-pointer select-none text-xs leading-relaxed text-blue-100/75"
                     >
-                      I am over 21 years of age and have read and accepted the
-                      general terms and conditions. I agree to receive information
-                      from your company. I can cancel this service in my account at
-                      any time.
+                     我已满 21 岁，并已阅读且接受通用服务条款。我同意接收公司资讯，并可随时在账号中取消此服务。
                     </label>
                   </div>
 
@@ -719,7 +715,7 @@ const RegistrationForm = () => {
                         : "hover:brightness-110 hover:shadow-[0_20px_50px_rgba(34,211,238,0.28)]"
                     }`}
                   >
-                    Complete Registration
+                    完成注册
                     <CheckCircle2 className="h-5 w-5" />
                   </motion.button>
 
@@ -833,7 +829,7 @@ const shouldAllowGirlClick = showFromSteps && !hideBubbleAtRegistration;
               <div className="flex items-center justify-center gap-2 sm:gap-2.5">
                 <div className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
                 <p className="text-[11px] font-bold leading-tight tracking-wide text-white sm:whitespace-nowrap sm:text-sm">
-                  Click here to register
+                  点击此处注册
                 </p>
               </div>
             </div>
@@ -968,7 +964,7 @@ const HeroCTA = () => {
         </AnimatePresence>
 
         <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
-          Join Now
+          立即加入
           <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
         </span>
       </motion.button>
@@ -1048,19 +1044,19 @@ useEffect(() => {
 }, [liteMode]);
 
   const stepData = [
-    { title: "Register", desc: "Create account", image: registerImg },
+    { title: "注册", desc: "创建您的账号", image: registerImg },
     {
-      title: "Deposit",
-      desc: "Deposit $50 to unlock rewards",
+      title: "存款",
+      desc: "存款 $50 解锁奖励",
       image: depositImg,
     },
-    { title: "Reward", desc: "Get 188 FS", image: playImg },
+    { title: "奖励", desc: "即送 188 FS", image: playImg },
   ];
 
   const trackerItems = [
-  { title: "REGISTER", sub: "With Us", type: "text" as const },
-  { title: "188 FS", sub: "Deposit & Get FS", type: "text" as const },
-  { title: "MORE REWARD AWAITS", type: "text" as const },
+  { title: "注册", sub: "加入我们平台", type: "text" as const },
+  { title: "188 FS", sub: "存款即送 FS", type: "text" as const },
+  { title: "更多奖励等您开启", type: "text" as const },
   { title: "", sub: "", type: "airpod" as const },
 ];
 
@@ -1300,9 +1296,9 @@ useEffect(() => {
                                       "0 1px 0 rgba(255,255,255,0.08), 0 2px 10px rgba(0,0,0,0.35)",
                                   }}
                                 >
-                                  Deposit &amp; Play To
+                                  存款 &amp; 并游戏
                                   <br />
-                                  Unlock
+                                  以解锁
                                 </p>
                               </motion.div>
                             </motion.div>
@@ -1376,7 +1372,7 @@ useEffect(() => {
                                   <div className="mb-1 sm:mb-1.5">
                                     <p
                                       className={`font-black uppercase leading-[0.9] tracking-[-0.04em] ${
-                                        item.title === "MORE REWARD AWAITS"
+                                        item.title === "更多奖励等您开启"
                                           ? "text-[14px] sm:text-[18px] md:text-[21px] lg:text-[24px]"
                                           : "text-[16px] sm:text-[20px] md:text-[24px] lg:text-[27px]"
                                       }`}
@@ -1552,23 +1548,23 @@ useEffect(() => {
                           >
                             {i === 0 && (
                               <>
-                                Trusted Since
+                                始于 2016
                                 <br />
-                                2016
+                               值得信赖
                               </>
                             )}
                             {i === 1 && (
                               <>
-                                5,000+ Active
+                                5,000+ 活跃
                                 <br />
-                                Members
+                                会员
                               </>
                             )}
                             {i === 2 && (
                               <>
-                                10+ Rewards
+                                10+ 项奖励
                                 <br />
-                                To Unlock
+                                等您解锁
                               </>
                             )}
                           </p>
@@ -1642,7 +1638,7 @@ useEffect(() => {
     textShadow: "0 2px 12px rgba(0,0,0,0.28)",
   }}
 >
-  Steps to Claim
+  领取步骤
 </h2>
                 </div>
 
