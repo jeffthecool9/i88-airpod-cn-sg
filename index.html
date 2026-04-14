@@ -18,9 +18,11 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
 
-      fbq('init', '1442409451238595');
+      // ✅ NEW PIXEL
+      fbq('init', '1490710665833146');
       fbq('track', 'PageView');
 
+      // ✅ FINAL CTA TRACKING
       window.trackCTA = function(label = 'final_complete_registration') {
         if (typeof fbq !== 'undefined') {
           fbq('track', 'Lead');
@@ -30,6 +32,7 @@
         }
       };
 
+      // ✅ CUSTOM EVENTS
       window.trackCustomEvent = function(eventName, params = {}) {
         if (typeof fbq !== 'undefined') {
           fbq('trackCustom', eventName, params);
@@ -51,12 +54,13 @@
   </head>
 
   <body>
+    <!-- ✅ NOSCRIPT FIXED -->
     <noscript>
       <img
         height="1"
         width="1"
         style="display:none"
-        src="https://www.facebook.com/tr?id=1442409451238595&ev=PageView&noscript=1"
+        src="https://www.facebook.com/tr?id=1490710665833146&ev=PageView&noscript=1"
         alt=""
       />
     </noscript>
